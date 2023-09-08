@@ -1,9 +1,9 @@
-
+import Form from "./Form";
 
 const Main = () => {
   return (
     <main className="main-container">
-      main
+      <Form />
     </main>
   )
 }
