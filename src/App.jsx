@@ -1,15 +1,27 @@
-import Main from './components/Main'
-import Footer from './components/Footer'
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
-import './App.css'
+import styled from "styled-components";
+
+import "./App.css";
+
+const SectionWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: max-content;
+  background-color: hsl(0, 0%, 94%);
+`
 
 const App = () => {
   return (
-    <section className='page'>
+    <SectionWrapper>
       <Main />
       <Footer />
-    </section>
-  )
-}
+    </SectionWrapper>
+  );
+};
 
-export default App
+export default App;

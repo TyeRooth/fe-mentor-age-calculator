@@ -1,7 +1,17 @@
 import { useState } from "react";
+import styled from "styled-components";
 
 import Form from "./Form";
 import Results from "./Results";
+
+const MainContent = styled.main`
+background-color: white;
+padding: 30px;
+border-radius: 14px;
+border-bottom-right-radius: 60px;
+display: flex;
+flex-direction: column;
+`
 
 const Main = () => {
   const [years, setYears] = useState(null);
@@ -9,10 +19,10 @@ const Main = () => {
   const [days, setDays] = useState(null);
 
   return (
-    <main className="main-container">
+    <MainContent>
       <Form />
       <Results years={years} months={months} days={days} />
-    </main>
+    </MainContent>
   );
 };
 

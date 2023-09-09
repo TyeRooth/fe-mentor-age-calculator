@@ -6,7 +6,7 @@ const Result = ({ label, calculation }) => {
       <span className="calculation span">
         {!calculation ? "--" : calculation}
       </span>
-      {label}
+      {" "}{label}
     </article>
   );
 };
