@@ -5,12 +5,13 @@ import Form from "./Form";
 import Results from "./Results";
 
 const MainContent = styled.main`
-background-color: white;
-padding: 30px;
-border-radius: 14px;
-border-bottom-right-radius: 60px;
-display: flex;
-flex-direction: column;
+  background-color: white;
+  padding: 40px;
+  border-radius: 14px;
+  border-bottom-right-radius: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
 `
 
 const Main = () => {

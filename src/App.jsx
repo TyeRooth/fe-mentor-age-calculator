@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 
 import styled from "styled-components";
 
-import "./App.css";
 
 const SectionWrapper = styled.section`
   display: flex;

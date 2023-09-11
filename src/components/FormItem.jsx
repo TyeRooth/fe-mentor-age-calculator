@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const Article = styled.article`
+  display: flex;
+  flex-direction: column;
+`
 
 const FormItem = ({ id, label, placeholder }) => {
   return (
-    <article className="birthdate-form-item">
+    <Article>
       <label htmlFor={id} className="birthdate-form-label">
         {label}
       </label>
@@ -12,7 +18,7 @@ const FormItem = ({ id, label, placeholder }) => {
         className="birthdate-form-input"
         placeholder={placeholder}
       />
-    </article>
+    </Article>
   );
 };
 
