@@ -7,10 +7,12 @@ const StyledForm = styled.form`
   gap: 20px;
   border-bottom: 1px solid;
   border-color: hsl(0, 0%, 86%);
-  padding-bottom: 25px;
-  color: hsl(0, 1%, 44%);
+  padding-bottom: 35px;
   position: relative;
   font-family: poppinsBold;
+  @media screen and (max-width: 600px) {
+    padding-bottom: 50px;
+  }
 `
 
 const SubmitBtn = styled.button`
@@ -21,11 +23,24 @@ const SubmitBtn = styled.button`
   position: absolute;
   bottom: -30px;
   right: 0px;
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 8%);
+  }
+  @media screen and (max-width: 600px) {
+    left: 0%;
+    margin: 0 auto;
+    bottom: -25px;
+  }
 `
 
 const SubmitIcon = styled.img`
   width: 30px;
   height: 30px;
+  @media screen and (max-width: 600px) {
+    width: 20px;
+    height: 20px;
+  }
 `
 
 const Form = () => {
