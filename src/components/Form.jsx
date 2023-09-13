@@ -1,6 +1,7 @@
 import FormItem from "./FormItem";
 import arrowIcon from "../assets/images/icon-arrow.svg";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const StyledForm = styled.form`
   display: flex;
@@ -13,7 +14,7 @@ const StyledForm = styled.form`
   @media screen and (max-width: 600px) {
     padding-bottom: 50px;
   }
-`
+`;
 
 const SubmitBtn = styled.button`
   background-color: hsl(259, 100%, 65%);
@@ -32,7 +33,7 @@ const SubmitBtn = styled.button`
     margin: 0 auto;
     bottom: -25px;
   }
-`
+`;
 
 const SubmitIcon = styled.img`
   width: 30px;
@@ -41,19 +42,41 @@ const SubmitIcon = styled.img`
     width: 20px;
     height: 20px;
   }
-`
+`;
 
-const Form = () => {
+const Form = ({ handleFormSubmit, daysError, monthsError, yearsError }) => {
   return (
-    <StyledForm>
-      <FormItem id="birthdate-day" label="DAY" placeholder="DD" />
-      <FormItem id="birthdate-month" label="MONTH" placeholder="MM" />
-      <FormItem id="birthdate-year" label="YEAR" placeholder="YY" />
+    <StyledForm onSubmit={handleFormSubmit}>
+      <FormItem
+        id="birthdate-day"
+        label="DAY"
+        placeholder="DD"
+        error={daysError}
+      />
+      <FormItem
+        id="birthdate-month"
+        label="MONTH"
+        placeholder="MM"
+        error={monthsError}
+      />
+      <FormItem
+        id="birthdate-year"
+        label="YEAR"
+        placeholder="YY"
+        error={yearsError}
+      />
       <SubmitBtn className="birthdate-form-btn" type="submit">
-        <SubmitIcon src={arrowIcon} alt="Submit birthdate"/>
+        <SubmitIcon src={arrowIcon} alt="Submit birthdate" />
       </SubmitBtn>
     </StyledForm>
   );
+};
+
+Form.propTypes = {
+  handleFormSubmit: PropTypes.func.isRequired,
+  daysError: PropTypes.string,
+  monthsError: PropTypes.string,
+  yearsError: PropTypes.string,
 };
 
 export default Form;
