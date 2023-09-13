@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Article = styled.article`
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  max-width: 150px;
   flex: 1;
   min-width: 0;
 `

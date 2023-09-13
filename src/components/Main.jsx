@@ -8,10 +8,10 @@ const MainContent = styled.main`
   background-color: white;
   padding: 40px;
   border-radius: 14px;
-  border-bottom-right-radius: 60px;
+  border-bottom-right-radius: 30%;
   display: flex;
   flex-direction: column;
-  width: 60vw;
+  width: 50vw;
 `
 
 const Main = () => {
