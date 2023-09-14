@@ -15,10 +15,12 @@ const Input = styled.input`
   flex-shrink: 1;
   border-radius: 8px;
   border-style: solid;
-  border-color: hsl(0, 0%, 86%);
+  border-color: ${(props) => {
+    if (props.error) return "hsl(0, 100%, 67%)";
+    return "hsl(0, 0%, 86%)";
+  }};
   color: hsl(0, 0%, 8%);
   padding: 10px;
-  caret-color: hsl(259, 100%, 65%);
   &:hover {
     cursor: pointer;
     border-color: hsl(0, 1%, 44%);
@@ -34,7 +36,10 @@ const Input = styled.input`
 
 const Label = styled.label`
   max-width: 100%;
-  color: hsl(0, 1%, 44%);
+  color: ${(props) => {
+    if (props.error) return "hsl(0, 100%, 67%)";
+    return "hsl(0, 1%, 44%)";
+  }};
   font-size: 12px;
   display: block;
 `;
@@ -51,7 +56,7 @@ const Error = styled.p`
 const FormItem = ({ id, label, placeholder, error }) => {
   return (
     <Article>
-      <Label htmlFor={id} className="birthdate-form-label">
+      <Label htmlFor={id} className="birthdate-form-label" error={error}>
         {label}
       </Label>
       <Input
@@ -59,6 +64,7 @@ const FormItem = ({ id, label, placeholder, error }) => {
         id={id}
         className="birthdate-form-input"
         placeholder={placeholder}
+        error={error}
       />
       {error ? <Error>{error}</Error> : null}
     </Article>
