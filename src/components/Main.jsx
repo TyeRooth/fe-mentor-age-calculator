@@ -23,14 +23,26 @@ const Main = () => {
   const [monthsError, setMonthsError] = useState(null);
   const [yearsError, setYearsError] = useState(null);
 
+  const resetErrors = () => {
+    setDaysError(null);
+    setMonthsError(null);
+    setYearsError(null);
+  };
+
   const handleFormSubmit = (e) => {
     console.log(e);
     e.preventDefault();
-    const { dayError, monthError, yearError } = validateBirthdateForm(e.target);
+    resetErrors();
+    const { dayError, monthError, yearError, dateError } =
+      validateBirthdateForm(e.target);
     if (dayError || monthError || yearError) {
       setDaysError(dayError);
       setMonthsError(monthError);
       setYearsError(yearError);
+      return;
+    } else if (dateError) {
+      setDaysError(dateError);
+      return;
     }
     // setDays(e.target[0].value);
     // setMonths(e.target[1].value);
