@@ -24,7 +24,7 @@ const Result = ({ label, calculation }) => {
 
 Result.propTypes = {
   label: PropTypes.string.isRequired,
-  calculation: PropTypes.number,
+  calculation: PropTypes.string,
 };
 
 export default Result;

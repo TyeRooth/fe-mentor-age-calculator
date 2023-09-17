@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Form from "./Form";
 import Results from "./Results";
 import validateBirthdateForm from "../utils/validations";
+import calculateDateDiffs from "../utils/calculations";
 
 const MainContent = styled.main`
   background-color: white;
@@ -30,7 +31,6 @@ const Main = () => {
   };
 
   const handleFormSubmit = (e) => {
-    console.log(e);
     e.preventDefault();
     resetErrors();
     const { dayError, monthError, yearError, dateError } =
@@ -44,9 +44,10 @@ const Main = () => {
       setDaysError(dateError);
       return;
     }
-    // setDays(e.target[0].value);
-    // setMonths(e.target[1].value);
-    // setYears(e.target[2].value);
+    const { yearsCalc, monthsCalc, daysCalc } = calculateDateDiffs(e.target);
+    setDays(daysCalc);
+    setMonths(monthsCalc);
+    setYears(yearsCalc);
   };
 
   return (

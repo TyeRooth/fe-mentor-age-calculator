@@ -18,9 +18,9 @@ const Results = ({ years, months, days }) => {
 };
 
 Results.propTypes = {
-  years: PropTypes.number,
-  months: PropTypes.number,
-  days: PropTypes.number,
+  years: PropTypes.string,
+  months: PropTypes.string,
+  days: PropTypes.string,
 };
 
 export default Results;
