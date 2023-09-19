@@ -6,17 +6,17 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: poppinsItalic;
-    src: url(./src/assets/fonts/Poppins-Italic.ttf);
+    src: url(../src/assets/fonts/Poppins-Italic.ttf);
   }
 
   @font-face {
     font-family: poppinsBold;
-    src: url(./src/assets/fonts/Poppins-Bold.ttf);
+    src: url(../src/assets/fonts/Poppins-Bold.ttf);
   }
 
   @font-face {
     font-family: poppinsExtraBoldItalic;
-    src: url(./src/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+    src: url(../src/assets/fonts/Poppins-ExtraBoldItalic.ttf);
   }
 
   body {

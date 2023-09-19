@@ -4,6 +4,9 @@ const validateBirthdateForm = (target) => {
   const dayError = validateBirthdateDay(target[0].value);
   const monthError = validateBirthdateMonth(target[1].value);
   const yearError = validateBirthdateYear(target[2].value);
+  if (dayError || monthError || yearError) {
+    return { dayError, monthError, yearError }
+  }
   const dateError = validateBirthdateDate(
     target[0].value,
     target[1].value,
