@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import CountUp from "react-countup";
 
 const ResultArticle = styled.article`
   font-family: poppinsExtraBoldItalic;
@@ -14,9 +15,10 @@ const CalculatedResult = styled.span`
 `;
 
 const Result = ({ label, calculation }) => {
+  const animatedNumber = <CountUp end={parseInt(calculation)} duration={4} />
   return (
     <ResultArticle className="calculation-result">
-      <CalculatedResult>{!calculation ? "--" : calculation}</CalculatedResult>{" "}
+      <CalculatedResult>{!calculation ? "--" : animatedNumber}</CalculatedResult>{" "}
       {label}
     </ResultArticle>
   );
